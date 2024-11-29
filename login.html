@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تسجيل الدخول - Spherely</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 90%;
+      max-width: 400px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 32px;
+      color: #1877f2;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .form-group button {
+      width: 100%;
+      padding: 10px;
+      background-color: #1877f2;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .form-group button:hover {
+      background-color: #165eab;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .footer a {
+      color: #1877f2;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>تسجيل الدخول</h1>
+    </div>
+    <div class="form-group">
+      <input type="text" id="username" placeholder="أدخل اسم المستخدم" required>
+    </div>
+    <div class="form-group">
+      <input type="password" id="password" placeholder="أدخل كلمة السر" required>
+    </div>
+    <div class="form-group">
+      <button onclick="login()">تسجيل دخول</button>
+    </div>
+    <div class="footer">
+      <a href="signup.html">إنشاء حساب جديد</a>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // هنا يمكن إضافة الكود للتحقق من صحة البيانات (على سبيل المثال عبر API أو من قاعدة البيانات)
+      if (username && password) {
+        // في حال كان اسم المستخدم وكلمة السر صحيحين:
+        localStorage.setItem('username', username);
+        alert('تم تسجيل الدخول بنجاح');
+        window.location.href = 'spherely.html';  // توجيه المستخدم إلى الصفحة الرئيسية بعد تسجيل الدخول
+      } else {
+        alert('من فضلك أدخل اسم المستخدم وكلمة السر');
+      }
+    }
+  </script>
+
+</body></html>
